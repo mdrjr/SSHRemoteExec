@@ -29,6 +29,7 @@ public class SSHRemoteExecMainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         utils = new Utils();
+        populateAllSpinners();
     }
     
     @Override

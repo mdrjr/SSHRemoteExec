@@ -43,5 +43,13 @@ public class ServerDAO implements Serializable {
 		}
 		return lstServers;
 	}
+	
+	public void create(Server s) {
+		try {
+			daoServer.create(s);
+		} catch (Exception e) {
+			Log.e("DB", e.getMessage());
+		}
+	}
 
 }
