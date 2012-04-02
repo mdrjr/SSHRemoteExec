@@ -10,11 +10,16 @@ public class Command implements Serializable {
 
 	private static final long serialVersionUID = -4106369501243475595L;
 	
-	@DatabaseField(generatedId = true)
+	public static final String ID_FIELD_NAME = "id";
+	public static final String NAME_FIELD_NAME = "name";
+	public static final String COMMAND_FIELD_NAME = "command";
+	
+	
+	@DatabaseField(generatedId = true, columnName = ID_FIELD_NAME)
 	private Integer id;
-	@DatabaseField(canBeNull = false, columnName = "name")
+	@DatabaseField(canBeNull = false, columnName = NAME_FIELD_NAME)
 	private String name;
-	@DatabaseField(canBeNull = false, columnName = "command")
+	@DatabaseField(canBeNull = false, columnName = COMMAND_FIELD_NAME)
 	private String command;
 	
 	public Integer getId() {

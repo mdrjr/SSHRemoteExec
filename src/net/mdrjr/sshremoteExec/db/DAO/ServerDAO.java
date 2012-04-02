@@ -12,18 +12,20 @@ import android.util.Log;
 import com.j256.ormlite.android.AndroidConnectionSource;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
+import com.j256.ormlite.stmt.QueryBuilder;
+import com.j256.ormlite.stmt.SelectArg;
 import com.j256.ormlite.support.ConnectionSource;
 
 public class ServerDAO implements Serializable {
 
 	private static final long serialVersionUID = 8637756758400490936L;
-	
+
 	private Dao<Server, Integer> daoServer;
 	private DatabaseHelper dbHelper;
 	private ConnectionSource connectionSource;
 	@SuppressWarnings("unused")
 	private Context context;
-	
+
 	public ServerDAO(Context context) {
 		this.context = context;
 		dbHelper = new DatabaseHelper(context);
@@ -34,7 +36,7 @@ public class ServerDAO implements Serializable {
 			Log.e("DB", e.getMessage());
 		}
 	}
-	
+
 	public List<Server> getAllServers() {
 		List<Server> lstServers = null;
 		try {
@@ -44,13 +46,26 @@ public class ServerDAO implements Serializable {
 		}
 		return lstServers;
 	}
-	
+
 	public void create(Server s) {
 		try {
 			daoServer.create(s);
 		} catch (Exception e) {
 			Log.e("DB", e.getMessage());
 		}
+	}
+
+	public Server getServerByName(String serverName) {
+		Server s = new Server();
+		try {
+			QueryBuilder<Server, Integer> builder = daoServer.queryBuilder();
+			builder.where().eq("serverName", new SelectArg());
+			s = daoServer.queryRaw(builder.prepareStatementString(), serverName);
+			
+		} catch (Exception e) {
+			Log.e("DB", e.getMessage());
+		}
+		return s;
 	}
 
 }
