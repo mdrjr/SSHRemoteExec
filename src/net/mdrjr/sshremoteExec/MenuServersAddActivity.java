@@ -18,6 +18,7 @@ public class MenuServersAddActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) { 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mainmenu_server_add);
+		
 		btnAddServer = (Button) findViewById(R.id.buttonAddNewServer);
 		
 		edtServerName = (EditText) findViewById(R.id.edtServerName);

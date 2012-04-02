@@ -1,5 +1,6 @@
 package net.mdrjr.sshremoteExec;
 
+import net.mdrjr.sshremoteExec.db.Command;
 import net.mdrjr.sshremoteExec.db.DAO.CommandDAO;
 import android.app.Activity;
 import android.os.Bundle;
@@ -32,6 +33,10 @@ public class MenuCommandsAddActivity extends Activity {
 		OnClickListener l = new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				Command c = new Command();
+				c.setCommand(edtCommand.getText().toString());
+				c.setName(edtCommandAlias.getText().toString());
+				
 				
 			}
 		};

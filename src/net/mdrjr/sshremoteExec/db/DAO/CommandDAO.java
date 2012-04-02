@@ -44,5 +44,13 @@ public class CommandDAO implements Serializable {
 		}
 		return lstCommands;
 	}
+	
+	public void create(Command c) {
+		try {
+			daoCommand.create(c);
+		} catch (Exception e) {
+			Log.e("DB", e.getMessage());
+		}
+	}
 
 }
