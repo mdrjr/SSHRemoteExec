@@ -103,7 +103,8 @@ public class SSHRemoteExecMainActivity extends Activity {
     }
 
     public void mainMenuCommandsAdd() {
-    	
+    	Intent intent = new Intent(SSHRemoteExecMainActivity.this, MenuCommandsAddActivity.class);
+    	startActivity(intent);
     }
 
     public void mainMenuCommandsList() {

@@ -6,7 +6,6 @@ import java.util.List;
 
 import net.mdrjr.sshremoteExec.db.Command;
 import net.mdrjr.sshremoteExec.db.DatabaseHelper;
-import net.mdrjr.sshremoteExec.db.Server;
 import android.content.Context;
 import android.util.Log;
 
@@ -22,6 +21,7 @@ public class CommandDAO implements Serializable {
 	private Dao<Command, Integer> daoCommand;
 	private DatabaseHelper dbHelper;
 	private ConnectionSource connectionSource;
+	@SuppressWarnings("unused")
 	private Context context;
 	
 	public CommandDAO(Context context) {

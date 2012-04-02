@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MenuCommandsAddActivity extends Activity {
 
@@ -36,8 +37,9 @@ public class MenuCommandsAddActivity extends Activity {
 				Command c = new Command();
 				c.setCommand(edtCommand.getText().toString());
 				c.setName(edtCommandAlias.getText().toString());
-				
-				
+				cDao.create(c);
+				Toast.makeText(MenuCommandsAddActivity.this, "Command: " + edtCommandAlias.getText().toString() + " added.", Toast.LENGTH_SHORT).show();
+				MenuCommandsAddActivity.this.finish();
 			}
 		};
 		

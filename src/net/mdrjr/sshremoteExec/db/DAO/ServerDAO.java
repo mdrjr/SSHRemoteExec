@@ -21,6 +21,7 @@ public class ServerDAO implements Serializable {
 	private Dao<Server, Integer> daoServer;
 	private DatabaseHelper dbHelper;
 	private ConnectionSource connectionSource;
+	@SuppressWarnings("unused")
 	private Context context;
 	
 	public ServerDAO(Context context) {
