@@ -31,7 +31,7 @@ public class MenuServersAddActivity extends Activity {
 		addButtonHandler();
 	}
 	
-	public void addButtonHandler() { 
+	private void addButtonHandler() { 
 		OnClickListener l = new OnClickListener() {
 			@Override
 			public void onClick(View v) {
