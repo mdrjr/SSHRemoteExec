@@ -17,7 +17,6 @@ public final class R {
         public static final int btnSaveCommand=0x7f06000d;
         public static final int buttonAddNewServer=0x7f06001e;
         public static final int buttonQuery=0x7f060003;
-        public static final int editText1=0x7f060002;
         public static final int edtCommand=0x7f06000c;
         public static final int edtCommandAlias=0x7f060008;
         public static final int edtServerIP=0x7f060014;
@@ -25,6 +24,7 @@ public final class R {
         public static final int edtServerPassword=0x7f06001d;
         public static final int edtServerPort=0x7f060017;
         public static final int edtServerUserName=0x7f06001a;
+        public static final int edtTextReturnServer=0x7f060002;
         public static final int mainmenu_about=0x7f060025;
         public static final int mainmenu_commands=0x7f060022;
         public static final int mainmenu_commands_add=0x7f060023;

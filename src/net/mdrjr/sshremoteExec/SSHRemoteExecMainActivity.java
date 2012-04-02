@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class SSHRemoteExecMainActivity extends Activity {
     private Button btnQuery;
     private CommandDAO cDao;
     private ServerDAO sDao;
+    private EditText edtTextReturnServer;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,8 @@ public class SSHRemoteExecMainActivity extends Activity {
         sDao = new ServerDAO(this);
         utils = new Utils();
         populateAllSpinners();
+        edtTextReturnServer = (EditText) findViewById(R.id.edtTextReturnServer);
+        addButtonListener();
     }
     
     @Override
@@ -103,6 +107,7 @@ public class SSHRemoteExecMainActivity extends Activity {
 				
 				SSHConnection sshConnection = new SSHConnection(s.getUsername(), s.getPassword(), s.getIp(), s.getPort());
 				
+				edtTextReturnServer.setText(sshConnection.execCMD(c.getCommand()));
 			}
 		};
 		
