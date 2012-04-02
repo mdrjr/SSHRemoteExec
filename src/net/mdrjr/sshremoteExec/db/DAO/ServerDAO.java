@@ -12,8 +12,8 @@ import android.util.Log;
 import com.j256.ormlite.android.AndroidConnectionSource;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
+import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.QueryBuilder;
-import com.j256.ormlite.stmt.SelectArg;
 import com.j256.ormlite.support.ConnectionSource;
 
 public class ServerDAO implements Serializable {
@@ -59,9 +59,10 @@ public class ServerDAO implements Serializable {
 		Server s = new Server();
 		try {
 			QueryBuilder<Server, Integer> builder = daoServer.queryBuilder();
-			builder.where().eq("serverName", new SelectArg());
-			s = daoServer.queryRaw(builder.prepareStatementString(), serverName);
+			builder.where().eq(Server.SERVERNAME_FIELD_NAME, serverName);
 			
+			PreparedQuery<Server> preparedQuery = builder.prepare();
+			s = daoServer.queryForFirst(preparedQuery);
 		} catch (Exception e) {
 			Log.e("DB", e.getMessage());
 		}
