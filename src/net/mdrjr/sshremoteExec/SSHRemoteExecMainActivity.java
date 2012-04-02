@@ -6,6 +6,7 @@ import net.mdrjr.sshremoteExec.db.Command;
 import net.mdrjr.sshremoteExec.db.Server;
 import net.mdrjr.sshremoteExec.db.DAO.CommandDAO;
 import net.mdrjr.sshremoteExec.db.DAO.ServerDAO;
+import net.mdrjr.sshremoteExec.ssh.SSHConnection;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,11 +24,15 @@ public class SSHRemoteExecMainActivity extends Activity {
     private Utils utils;
     private Spinner spinnerServers, spinnerCommands;
     private Button btnQuery;
+    private CommandDAO cDao;
+    private ServerDAO sDao;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        cDao = new CommandDAO(this);
+        sDao = new ServerDAO(this);
         utils = new Utils();
         populateAllSpinners();
     }
@@ -90,8 +95,14 @@ public class SSHRemoteExecMainActivity extends Activity {
 			public void onClick(View v) {
 				String selectedServer = String.valueOf(spinnerServers.getSelectedItem());
 				String selectedCommand = String.valueOf(spinnerCommands.getSelectedItem());
-				String show = "Server: " + selectedServer + " | Command: " + selectedCommand;
+				String show = "Running -> Server: " + selectedServer + " | Command: " + selectedCommand;
 				Toast.makeText(SSHRemoteExecMainActivity.this, show , Toast.LENGTH_LONG).show();
+				
+				Server s = sDao.getServerByName(selectedServer);
+				Command c = cDao.getCommandByName(selectedCommand);
+				
+				SSHConnection sshConnection = new SSHConnection(s.getUsername(), s.getPassword(), s.getIp(), s.getPort());
+				
 			}
 		};
 		
