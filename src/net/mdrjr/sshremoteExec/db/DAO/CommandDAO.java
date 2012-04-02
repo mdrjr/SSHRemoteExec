@@ -12,6 +12,8 @@ import android.util.Log;
 import com.j256.ormlite.android.AndroidConnectionSource;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
+import com.j256.ormlite.stmt.PreparedQuery;
+import com.j256.ormlite.stmt.QueryBuilder;
 import com.j256.ormlite.support.ConnectionSource;
 
 public class CommandDAO implements Serializable {
@@ -51,6 +53,23 @@ public class CommandDAO implements Serializable {
 		} catch (Exception e) {
 			Log.e("DB", e.getMessage());
 		}
+	}
+	
+	public Command getCommandByName(String commandAlias) { 
+		Command c = new Command();
+		
+		try {
+			QueryBuilder<Command, Integer> builder = daoCommand.queryBuilder();
+			builder.where().eq(Command.NAME_FIELD_NAME, commandAlias);
+			
+			PreparedQuery<Command> preparedQuery = builder.prepare();
+			c = daoCommand.queryForFirst(preparedQuery);
+			
+		} catch(Exception e) {
+			Log.e("DB", e.getMessage());
+		}
+		
+		return c;
 	}
 
 }
