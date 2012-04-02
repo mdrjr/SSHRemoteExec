@@ -1,0 +1,17 @@
+pt_BR:
+Um projeto simples para android utilizando ORM.
+
+Apenas para mostrar como e facil trabalhar com ORM em Android usando ORM
+Light.
+
+Tambem aproveito o conceito para mostrar uma conexao SSH usando JSch.
+
+
+en_US:
+A simple android project using ORM.
+
+Just to show how easy and simple is to work with ORM on android using ORM
+Light.
+
+Also, I'll show how to connect to a SSH Server and exec a command.
+
