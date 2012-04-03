@@ -21,6 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuServersAddActivity" android:label="Add a Server" android:noHistory="true"/>
+        <activity android:name=".MenuServersListActivity" android:label="Add a Command" android:noHistory="true" />
+        <activity android:name=".MenuCommandsListActivity" android:label="Add a Command" android:noHistory="true" />
         <activity android:name=".MenuCommandsAddActivity" android:label="Add a Command" android:noHistory="true" />
     </application>
 
