@@ -8,6 +8,7 @@ import net.mdrjr.sshremoteExec.db.DAO.CommandDAO;
 import net.mdrjr.sshremoteExec.db.DAO.ServerDAO;
 import net.mdrjr.sshremoteExec.ssh.SSHConnection;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -105,9 +106,13 @@ public class SSHRemoteExecMainActivity extends Activity {
 				Server s = sDao.getServerByName(selectedServer);
 				Command c = cDao.getCommandByName(selectedCommand);
 				
+				ProgressDialog dialog = ProgressDialog.show(SSHRemoteExecMainActivity.this, "Connecting...", "Connecting to Server: " + s.getIp() + ":" + s.getPort().toString(), true);
 				SSHConnection sshConnection = new SSHConnection(s.getUsername(), s.getPassword(), s.getIp(), s.getPort());
+				dialog.dismiss();
 				
+				dialog = ProgressDialog.show(SSHRemoteExecMainActivity.this, "Executing Command...", "Executing: " + c.getName() + " on Server: " + s.getServerName(), true);
 				edtTextReturnServer.setText(sshConnection.execCMD(c.getCommand()));
+				dialog.dismiss();
 			}
 		};
 		
