@@ -129,7 +129,8 @@ public class SSHRemoteExecMainActivity extends Activity {
     }
 
     public void mainMenuCommandsList() {
-    	
+    	Intent intent = new Intent(SSHRemoteExecMainActivity.this, MenuCommandsListActivity.class);
+    	startActivity(intent);
     }
 
     public void mainMenuServersAdd() {
@@ -138,7 +139,8 @@ public class SSHRemoteExecMainActivity extends Activity {
     }
 
     public void mainMenuSeversList() {
-    	
+    	Intent intent = new Intent(SSHRemoteExecMainActivity.this, MenuServersListActivity.class);
+    	startActivity(intent);    	
     }
 }
 
