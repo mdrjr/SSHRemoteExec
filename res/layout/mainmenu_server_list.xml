@@ -5,12 +5,12 @@
     android:orientation="vertical" >
 
     <TableLayout
-        android:id="@+id/tableLayoutAddNewServer"
+        android:id="@+id/tableLayoutListServer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <TableRow
-            android:id="@+id/tableRowServerName"
+            android:id="@+id/tableRowServerSelect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
@@ -121,6 +121,27 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.44" />
         </TableRow>
+
+        <TableRow
+            android:id="@+id/listTableRowServerPassword2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update" />
+    	
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D" />
+            
+        </TableRow>
+    
+    
     </TableLayout>
 
 </LinearLayout>
