@@ -3,5 +3,6 @@
 
     <string name="hello">Hello World, SSHRemoteExecMainActivity!</string>
     <string name="app_name">SSH Remote Exec</string>
+   
 
 </resources>
