@@ -22,7 +22,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Spinner
-                android:id="@+id/spinner1"
+                android:id="@+id/spinner_mainmenu_server_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </TableRow>
@@ -59,7 +59,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
-                android:id="@+id/listEdtServerPort"
+                android:id="@+id/listEdtServerIP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.44" />
@@ -78,7 +78,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
-                android:id="@+id/listEdtServerUserName"
+                android:id="@+id/listEdtServerPort"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.44" />
@@ -97,7 +97,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
-                android:id="@+id/listEdtServerPassword"
+                android:id="@+id/listEdtServerUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.44" />
@@ -116,7 +116,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
-                android:id="@+id/listEdtServerPassword2"
+                android:id="@+id/listEdtServerPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.44" />
@@ -128,16 +128,16 @@
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/btn_mainmenu_server_list_update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Update" />
     	
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/btn_mainmenu_server_list_delete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="D" />
+                android:text="Delete" />
             
         </TableRow>
     

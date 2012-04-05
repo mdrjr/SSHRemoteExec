@@ -15,7 +15,8 @@ public final class R {
     }
     public static final class id {
         public static final int btnSaveCommand=0x7f06000d;
-        public static final int button1=0x7f060031;
+        public static final int btn_mainmenu_server_list_delete=0x7f060032;
+        public static final int btn_mainmenu_server_list_update=0x7f060031;
         public static final int buttonAddNewServer=0x7f06001e;
         public static final int buttonQuery=0x7f060003;
         public static final int edtCommand=0x7f06000c;
@@ -26,11 +27,11 @@ public final class R {
         public static final int edtServerPort=0x7f060017;
         public static final int edtServerUserName=0x7f06001a;
         public static final int edtTextReturnServer=0x7f060002;
+        public static final int listEdtServerIP=0x7f060027;
         public static final int listEdtServerName=0x7f060024;
-        public static final int listEdtServerPassword=0x7f06002d;
-        public static final int listEdtServerPassword2=0x7f060030;
-        public static final int listEdtServerPort=0x7f060027;
-        public static final int listEdtServerUserName=0x7f06002a;
+        public static final int listEdtServerPassword=0x7f060030;
+        public static final int listEdtServerPort=0x7f06002a;
+        public static final int listEdtServerUsername=0x7f06002d;
         public static final int listTableRowServerIP=0x7f060022;
         public static final int listTableRowServerPassword=0x7f06002b;
         public static final int listTableRowServerPassword2=0x7f06002e;
@@ -41,16 +42,16 @@ public final class R {
         public static final int listTxtServerPort=0x7f060029;
         public static final int listTxtServerUserName=0x7f06002c;
         public static final int listTxtServerUserName2=0x7f06002f;
-        public static final int mainmenu_about=0x7f060038;
-        public static final int mainmenu_commands=0x7f060035;
-        public static final int mainmenu_commands_add=0x7f060036;
-        public static final int mainmenu_commands_list=0x7f060037;
-        public static final int mainmenu_servers=0x7f060032;
-        public static final int mainmenu_servers_add=0x7f060033;
-        public static final int mainmenu_servers_list=0x7f060034;
-        public static final int spinner1=0x7f060021;
+        public static final int mainmenu_about=0x7f060039;
+        public static final int mainmenu_commands=0x7f060036;
+        public static final int mainmenu_commands_add=0x7f060037;
+        public static final int mainmenu_commands_list=0x7f060038;
+        public static final int mainmenu_servers=0x7f060033;
+        public static final int mainmenu_servers_add=0x7f060034;
+        public static final int mainmenu_servers_list=0x7f060035;
         public static final int spinnerCommand=0x7f060001;
         public static final int spinnerServer=0x7f060000;
+        public static final int spinner_mainmenu_server_list=0x7f060021;
         public static final int tableLayout1=0x7f060004;
         public static final int tableLayoutAddNewServer=0x7f06000e;
         public static final int tableLayoutListServer=0x7f06001f;

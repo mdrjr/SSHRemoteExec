@@ -9,9 +9,7 @@ import net.mdrjr.sshremoteExec.db.DAO.ServerDAO;
 import net.mdrjr.sshremoteExec.ssh.SSHConnection;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -87,18 +85,12 @@ public class SSHRemoteExecMainActivity extends Activity {
 		List<Server> lstServers = daoServer.getAllServers();
 		List<Command> lstCommands = daoCommand.getAllCommands();
 
-		ArrayAdapter<String> adapterServers = new ArrayAdapter<String>(this,
-				android.R.layout.simple_spinner_item,
-				utils.lstServerToStringArray(lstServers));
-		adapterServers
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		ArrayAdapter<String> adapterServers = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, utils.lstServerToStringArray(lstServers));
+		adapterServers.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinnerServers.setAdapter(adapterServers);
 
-		ArrayAdapter<String> adapterCommands = new ArrayAdapter<String>(this,
-				android.R.layout.simple_spinner_item,
-				utils.lstCommandToStringArray(lstCommands));
-		adapterCommands
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		ArrayAdapter<String> adapterCommands = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, utils.lstCommandToStringArray(lstCommands));
+		adapterCommands.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinnerCommands.setAdapter(adapterCommands);
 
 	}
@@ -108,32 +100,20 @@ public class SSHRemoteExecMainActivity extends Activity {
 		OnClickListener l = new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				String selectedServer = String.valueOf(spinnerServers
-						.getSelectedItem());
-				String selectedCommand = String.valueOf(spinnerCommands
-						.getSelectedItem());
-				String show = "Running -> Server: " + selectedServer
-						+ " | Command: " + selectedCommand;
-				Toast.makeText(SSHRemoteExecMainActivity.this, show,
-						Toast.LENGTH_LONG).show();
+				String selectedServer = String.valueOf(spinnerServers.getSelectedItem());
+				String selectedCommand = String.valueOf(spinnerCommands.getSelectedItem());
+				String show = "Running -> Server: " + selectedServer + " | Command: " + selectedCommand;
+				Toast.makeText(SSHRemoteExecMainActivity.this, show, Toast.LENGTH_LONG).show();
 
 				Server s = sDao.getServerByName(selectedServer);
 				Command c = cDao.getCommandByName(selectedCommand);
 
-				ProgressDialog dialog = ProgressDialog.show(
-						SSHRemoteExecMainActivity.this, "Connecting...",
-						"Connecting to Server: " + s.getIp() + ":"
-								+ s.getPort().toString(), true);
-				SSHConnection sshConnection = new SSHConnection(
-						s.getUsername(), s.getPassword(), s.getIp(),
-						s.getPort());
+				ProgressDialog dialog = ProgressDialog.show(SSHRemoteExecMainActivity.this, "Connecting...", "Connecting to Server: " + s.getIp() + ":" + s.getPort().toString(), true);
+				SSHConnection sshConnection = new SSHConnection(s.getUsername(), s.getPassword(), s.getIp(), s.getPort());
 				dialog.dismiss();
 
-				dialog = ProgressDialog.show(SSHRemoteExecMainActivity.this,
-						"Executing Command...", "Executing: " + c.getName()
-								+ " on Server: " + s.getServerName(), true);
-				edtTextReturnServer.setText(sshConnection.execCMD(c
-						.getCommand()));
+				dialog = ProgressDialog.show(SSHRemoteExecMainActivity.this, "Executing Command...", "Executing: " + c.getName() + " on Server: " + s.getServerName(), true);
+				edtTextReturnServer.setText(sshConnection.execCMD(c.getCommand()));
 				dialog.dismiss();
 			}
 		};
@@ -165,26 +145,22 @@ public class SSHRemoteExecMainActivity extends Activity {
 	}
 
 	public void mainMenuCommandsAdd() {
-		Intent intent = new Intent(SSHRemoteExecMainActivity.this,
-				MenuCommandsAddActivity.class);
+		Intent intent = new Intent(SSHRemoteExecMainActivity.this, MenuCommandsAddActivity.class);
 		startActivity(intent);
 	}
 
 	public void mainMenuCommandsList() {
-		Intent intent = new Intent(SSHRemoteExecMainActivity.this,
-				MenuCommandsListActivity.class);
+		Intent intent = new Intent(SSHRemoteExecMainActivity.this, MenuCommandsListActivity.class);
 		startActivity(intent);
 	}
 
 	public void mainMenuServersAdd() {
-		Intent intent = new Intent(SSHRemoteExecMainActivity.this,
-				MenuServersAddActivity.class);
+		Intent intent = new Intent(SSHRemoteExecMainActivity.this, MenuServersAddActivity.class);
 		startActivity(intent);
 	}
 
 	public void mainMenuSeversList() {
-		Intent intent = new Intent(SSHRemoteExecMainActivity.this,
-				MenuServersListActivity.class);
+		Intent intent = new Intent(SSHRemoteExecMainActivity.this, MenuServersListActivity.class);
 		startActivity(intent);
 	}
 }
