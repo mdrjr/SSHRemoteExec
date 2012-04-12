@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import net.mdrjr.sshremoteExec.db.Command;
-import net.mdrjr.sshremoteExec.db.DatabaseHelper;
+import net.mdrjr.sshremoteExec.db.DBHelper;
 import android.content.Context;
 import android.util.Log;
 
@@ -21,14 +21,14 @@ public class CommandDAO implements Serializable {
 	private static final long serialVersionUID = 8637756758400490936L;
 	
 	private Dao<Command, Integer> daoCommand;
-	private DatabaseHelper dbHelper;
+	private DBHelper dbHelper;
 	private ConnectionSource connectionSource;
 	@SuppressWarnings("unused")
 	private Context context;
 	
 	public CommandDAO(Context context) {
 		this.context = context;
-		dbHelper = new DatabaseHelper(context);
+		dbHelper = new DBHelper(context);
 		connectionSource = new AndroidConnectionSource(dbHelper);
 		try {
 			daoCommand = DaoManager.createDao(connectionSource, Command.class);

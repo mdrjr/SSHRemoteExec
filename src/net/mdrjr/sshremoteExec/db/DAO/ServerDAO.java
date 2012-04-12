@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.List;
 
-import net.mdrjr.sshremoteExec.db.DatabaseHelper;
+import net.mdrjr.sshremoteExec.db.DBHelper;
 import net.mdrjr.sshremoteExec.db.Server;
 import android.content.Context;
 import android.util.Log;
@@ -21,14 +21,14 @@ public class ServerDAO implements Serializable {
 	private static final long serialVersionUID = 8637756758400490936L;
 
 	private Dao<Server, Integer> daoServer;
-	private DatabaseHelper dbHelper;
+	private DBHelper dbHelper;
 	private ConnectionSource connectionSource;
 	@SuppressWarnings("unused")
 	private Context context;
 
 	public ServerDAO(Context context) {
 		this.context = context;
-		dbHelper = new DatabaseHelper(context);
+		dbHelper = new DBHelper(context);
 		connectionSource = new AndroidConnectionSource(dbHelper);
 		try {
 			daoServer = DaoManager.createDao(connectionSource, Server.class);

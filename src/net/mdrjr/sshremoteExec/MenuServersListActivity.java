@@ -18,9 +18,12 @@ import android.widget.Spinner;
 public class MenuServersListActivity extends Activity {
 	private ServerDAO sDao;
 	private Spinner spinnerSelectServer;
+	@SuppressWarnings("unused")
 	private EditText edtServerName, edtServerIP, edtServerPort, edtServerUsername, edtServerPassword;
 	private Button btnUpdate, btnDelete;
 	private Utils utils;
+	
+
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -42,61 +45,65 @@ public class MenuServersListActivity extends Activity {
 		btnUpdate = (Button) findViewById(R.id.btn_mainmenu_server_list_update);
 		btnDelete = (Button) findViewById(R.id.btn_mainmenu_server_list_delete);
 		
-		populateSpinner();
 		
+		populateSpinner();
+
 		addButtonDeleteListener();
 		addButtonUpdateListener();
 		addSpinnerListener();
 	}
 	
-	private void populateSpinner() { 
+	private void populateSpinner() {
 		List<Server> lstServers = sDao.getAllServers();
 		ArrayAdapter<String> adapterServers = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, utils.lstServerToStringArray(lstServers));
 		adapterServers.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinnerSelectServer.setAdapter(adapterServers);
 	}
-	
+
 	private void addButtonDeleteListener() {
 		OnClickListener l = new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
+				System.out.println(spinnerSelectServer.getSelectedItem().toString());
+
 			}
 		};
-		
-		btnUpdate.setOnClickListener(l);
-	}
-	
-	private void addButtonUpdateListener() {
-		OnClickListener l = new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
-			}
-		};
-		
+
 		btnDelete.setOnClickListener(l);
 	}
-	
-	private void addSpinnerListener() { 
+
+	private void addButtonUpdateListener() {
+		OnClickListener l = new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+
+			}
+		};
+
+		btnUpdate.setOnClickListener(l);
+	}
+
+	private void addSpinnerListener() {
 		OnItemSelectedListener l = new OnItemSelectedListener() {
 
 			@Override
-			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+			public void onItemSelected(AdapterView<?> arg0, View arg1,
+					int arg2, long arg3) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void onNothingSelected(AdapterView<?> arg0) {
 				// do nothing when nothing is selected! duh!!!
-				
+
 			}
 		};
 		spinnerSelectServer.setOnItemSelectedListener(l);
 	}
+
+	
 }

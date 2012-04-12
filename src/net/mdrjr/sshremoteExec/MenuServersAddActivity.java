@@ -49,6 +49,7 @@ public class MenuServersAddActivity extends Activity {
 				// Toast its saved.
 				Toast.makeText(MenuServersAddActivity.this, "Server: " + edtServerName.getText().toString() + " Saved.", Toast.LENGTH_SHORT).show();
 				MenuServersAddActivity.this.finish();
+				
 			}
 		};
 		
