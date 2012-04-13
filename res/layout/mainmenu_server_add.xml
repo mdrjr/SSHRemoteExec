@@ -103,7 +103,7 @@
                 android:id="@+id/edtServerPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.44" >
+                android:layout_weight="0.44" android:inputType="textPassword">
             </EditText>
         </TableRow>
     </TableLayout>
