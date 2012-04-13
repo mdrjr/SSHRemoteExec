@@ -4,14 +4,14 @@
     <item android:id="@+id/mainmenu_servers" android:title="Servers">
         <menu>
             <item android:id="@+id/mainmenu_servers_add" android:title="Add" />
-            <item android:id="@+id/mainmenu_servers_list" android:title="Show/Delete" />
+            <item android:id="@+id/mainmenu_servers_list" android:title="Edit/Delete" />
         </menu>
     </item>
     
     <item android:id="@+id/mainmenu_commands" android:title="Commands">
         <menu>
             <item android:id="@+id/mainmenu_commands_add" android:title="Add" />
-            <item android:id="@+id/mainmenu_commands_list" android:title="Show/Delete" />
+            <item android:id="@+id/mainmenu_commands_list" android:title="Edit/Delete" />
         </menu>
     </item>
     
