@@ -18,7 +18,6 @@ import android.widget.Spinner;
 public class MenuServersListActivity extends Activity {
 	private ServerDAO sDao;
 	private Spinner spinnerSelectServer;
-	@SuppressWarnings("unused")
 	private EditText edtServerName, edtServerIP, edtServerPort, edtServerUsername, edtServerPassword;
 	private Button btnUpdate, btnDelete;
 	private Utils utils;
@@ -74,11 +73,9 @@ public class MenuServersListActivity extends Activity {
 
 	private void addButtonUpdateListener() {
 		OnClickListener l = new OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-
 			}
 		};
 
@@ -87,12 +84,17 @@ public class MenuServersListActivity extends Activity {
 
 	private void addSpinnerListener() {
 		OnItemSelectedListener l = new OnItemSelectedListener() {
-
 			@Override
-			public void onItemSelected(AdapterView<?> arg0, View arg1,
-					int arg2, long arg3) {
-				// TODO Auto-generated method stub
-
+			public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long id) {
+				String spinnerSelectedServer = adapterView.getItemAtPosition(pos).toString();
+				
+				Server selectedServer = sDao.getServerByName(spinnerSelectedServer);
+				
+				edtServerName.setText(selectedServer.getServerName());
+				edtServerIP.setText(selectedServer.getIp());
+				edtServerPort.setText(selectedServer.getPort().toString());
+				edtServerUsername.setText(selectedServer.getUsername());
+				edtServerPassword.setText(selectedServer.getPassword());
 			}
 
 			@Override
