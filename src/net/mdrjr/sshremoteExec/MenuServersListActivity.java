@@ -85,6 +85,7 @@ public class MenuServersListActivity extends Activity {
 				s.setServerName(edtServerName.getText().toString());
 				s.setUsername(edtServerUsername.getText().toString());
 				sDao.update(s);
+				populateSpinner();
 				Toast.makeText(MenuServersListActivity.this, "Server Updated", Toast.LENGTH_SHORT).show();
 			}
 		};
