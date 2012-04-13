@@ -43,6 +43,12 @@ public class SSHRemoteExecMainActivity extends Activity {
 		edtTextReturnServer = (EditText) findViewById(R.id.edtTextReturnServer);
 		addButtonListener();
 	}
+	
+	@Override
+	public void onResume() {
+		super.onResume();
+		populateAllSpinners();
+	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {

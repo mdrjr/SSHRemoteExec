@@ -62,7 +62,6 @@ public class MenuServersListActivity extends Activity {
 
 	private void addButtonDeleteListener() {
 		OnClickListener l = new OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				System.out.println(spinnerSelectServer.getSelectedItem().toString());
