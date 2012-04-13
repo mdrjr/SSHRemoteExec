@@ -18,7 +18,7 @@
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Server"
+                android:text="@string/server"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Spinner
@@ -36,14 +36,15 @@
                 android:id="@+id/listTxtServerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
+                android:text="@string/name"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/listEdtServerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:inputType="text" />
         </TableRow>
 
         <TableRow
@@ -55,14 +56,15 @@
                 android:id="@+id/listTxtServerIP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="IP"
+                android:text="@string/ip"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/listEdtServerIP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.44" />
+                android:layout_weight="0.44"
+                android:inputType="text" />
         </TableRow>
 
         <TableRow
@@ -74,14 +76,15 @@
                 android:id="@+id/listTxtServerPort"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Port"
+                android:text="@string/port"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/listEdtServerPort"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.44" />
+                android:layout_weight="0.44"
+                android:inputType="text" />
         </TableRow>
 
         <TableRow
@@ -93,18 +96,19 @@
                 android:id="@+id/listTxtServerUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username"
+                android:text="@string/username"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/listEdtServerUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.44" />
+                android:layout_weight="0.44"
+                android:inputType="text" />
         </TableRow>
 
         <TableRow
-            android:id="@+id/listTableRowServerPassword2"
+            android:id="@+id/listTableRowServerPassword22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
@@ -112,7 +116,7 @@
                 android:id="@+id/listTxtServerUserName2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password"
+                android:text="@string/password"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
@@ -131,13 +135,13 @@
                 android:id="@+id/btn_mainmenu_server_list_update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Update" />
+                android:text="@string/update" />
     	
             <Button
                 android:id="@+id/btn_mainmenu_server_list_delete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Delete" />
+                android:text="@string/delete" />
             
         </TableRow>
     

@@ -19,7 +19,7 @@ public class MenuCommandsAddActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mainmenu_command_add);
-		
+
 		edtCommandAlias = (EditText) findViewById(R.id.edtCommandAlias);
 		edtCommand = (EditText) findViewById(R.id.edtCommand);
 		btnSaveCommand = (Button) findViewById(R.id.btnSaveCommand);

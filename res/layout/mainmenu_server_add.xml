@@ -18,14 +18,15 @@
                 android:id="@+id/txtServerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
+                android:text="@string/name"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/edtServerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:inputType="text" />
         </TableRow>
 
         <TableRow
@@ -37,14 +38,15 @@
                 android:id="@+id/txtServerIP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="IP"
+                android:text="@string/ip"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/edtServerIP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.44" >
+                android:layout_weight="0.44"
+                android:inputType="text" >
             </EditText>
         </TableRow>
 
@@ -57,14 +59,15 @@
                 android:id="@+id/txtServerPort"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Port"
+                android:text="@string/port"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/edtServerPort"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.44" />
+                android:layout_weight="0.44"
+                android:inputType="text" />
         </TableRow>
 
         <TableRow
@@ -76,14 +79,15 @@
                 android:id="@+id/txtServerUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username"
+                android:text="@string/username"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/edtServerUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.44" >
+                android:layout_weight="0.44"
+                android:inputType="text" >
             </EditText>
         </TableRow>
 
@@ -96,7 +100,7 @@
                 android:id="@+id/txtServerPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password"
+                android:text="@string/password"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
@@ -112,6 +116,6 @@
         android:id="@+id/buttonAddNewServer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add New Server" />
+        android:text="@string/add_new_server" />
 
 </LinearLayout>

@@ -3,6 +3,18 @@
 
     <string name="hello">Hello World, SSHRemoteExecMainActivity!</string>
     <string name="app_name">SSH Remote Exec</string>
+    <string name="query_server">Query Server</string>
+    <string name="command">Command</string>
+    <string name="alias">Alias</string>
+    <string name="name">Name</string>
+    <string name="ip">IP</string>
+    <string name="port">Port</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="add_new_server">Add new server</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="server">Server</string>
    
 
 </resources>
