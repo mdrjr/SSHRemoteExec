@@ -42,6 +42,7 @@ public class SSHRemoteExecMainActivity extends Activity {
 		populateAllSpinners();
 		edtTextReturnServer = (EditText) findViewById(R.id.edtTextReturnServer);
 		addButtonListener();
+		edtTextReturnServer.setKeyListener(null);
 	}
 	
 	@Override

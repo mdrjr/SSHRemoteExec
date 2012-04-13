@@ -112,10 +112,7 @@ public class MenuServersListActivity extends Activity {
 			}
 
 			@Override
-			public void onNothingSelected(AdapterView<?> arg0) {
-				// do nothing when nothing is selected! duh!!!
-
-			}
+			public void onNothingSelected(AdapterView<?> arg0) { /* Nothing Selected, Nothing todo */ }
 		};
 		spinnerSelectServer.setOnItemSelectedListener(l);
 	}
