@@ -68,5 +68,14 @@ public class ServerDAO implements Serializable {
 		}
 		return s;
 	}
+	
+	public void update(Server s) {
+		try {
+			daoServer.update(s);
+		} catch (Exception e) {
+			Log.e("DB", e.getMessage());
+		}
+		
+	}
 
 }

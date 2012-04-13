@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class MenuServersListActivity extends Activity {
 	private ServerDAO sDao;
@@ -21,6 +22,7 @@ public class MenuServersListActivity extends Activity {
 	private EditText edtServerName, edtServerIP, edtServerPort, edtServerUsername, edtServerPassword;
 	private Button btnUpdate, btnDelete;
 	private Utils utils;
+	private Server currentServer;
 	
 
 	
@@ -75,7 +77,15 @@ public class MenuServersListActivity extends Activity {
 		OnClickListener l = new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+				Server s = new Server();
+				s.setId(currentServer.getId());
+				s.setIp(edtServerIP.getText().toString());
+				s.setPassword(edtServerPassword.getText().toString());
+				s.setPort(Integer.valueOf(edtServerPort.getText().toString()));
+				s.setServerName(edtServerName.getText().toString());
+				s.setUsername(edtServerUsername.getText().toString());
+				sDao.update(s);
+				Toast.makeText(MenuServersListActivity.this, "Server Updated", Toast.LENGTH_SHORT).show();
 			}
 		};
 
@@ -95,6 +105,7 @@ public class MenuServersListActivity extends Activity {
 				edtServerPort.setText(selectedServer.getPort().toString());
 				edtServerUsername.setText(selectedServer.getUsername());
 				edtServerPassword.setText(selectedServer.getPassword());
+				currentServer = selectedServer;
 			}
 
 			@Override
