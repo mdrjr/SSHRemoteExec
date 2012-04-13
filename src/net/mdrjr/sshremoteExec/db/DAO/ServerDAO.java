@@ -75,7 +75,14 @@ public class ServerDAO implements Serializable {
 		} catch (Exception e) {
 			Log.e("DB", e.getMessage());
 		}
-		
+	}
+	
+	public void delete(Server s) {
+		try {
+			daoServer.delete(s);
+		} catch (Exception e) {
+			Log.e("DB", e.getMessage());
+		}
 	}
 
 }

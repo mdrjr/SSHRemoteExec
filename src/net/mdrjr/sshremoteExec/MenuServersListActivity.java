@@ -65,8 +65,10 @@ public class MenuServersListActivity extends Activity {
 		OnClickListener l = new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				System.out.println(spinnerSelectServer.getSelectedItem().toString());
-
+				Server serverToDelete = currentServer;
+				sDao.delete(serverToDelete);
+				populateSpinner();
+				Toast.makeText(MenuServersListActivity.this, "Server Deleted", Toast.LENGTH_SHORT).show();
 			}
 		};
 
