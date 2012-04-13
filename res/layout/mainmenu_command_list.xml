@@ -3,6 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Command" android:textAppearance="?android:attr/textAppearanceLarge"/>
+        <Spinner android:id="@+id/spinner1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"/>
+    </LinearLayout>
+    <EditText android:id="@+id/editText1" android:layout_width="match_parent" android:layout_height="0dip" android:layout_weight="0.99" android:ems="10" android:inputType="textMultiLine">
+        <requestFocus />
+    </EditText>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:id="@+id/button1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Update"/>
+        <Button android:id="@+id/button2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Delete"/>
+    </LinearLayout>
+   
 
 </LinearLayout>
