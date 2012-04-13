@@ -71,5 +71,21 @@ public class CommandDAO implements Serializable {
 		
 		return c;
 	}
+	
+	public void update(Command c) {
+		try {
+			daoCommand.update(c);
+		} catch (Exception e) {
+			Log.e("DB", e.getMessage());
+		}
+	}
+	
+	public void delete(Command c) {
+		try {
+			daoCommand.delete(c);
+		} catch (Exception e) {
+			Log.e("DB", e.getMessage());
+		}
+	}
 
 }
