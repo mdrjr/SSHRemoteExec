@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.mdrjr.sshremoteExec"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.1" android:installLocation="preferExternal">
 
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="11"/>
    

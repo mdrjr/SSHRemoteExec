@@ -43,6 +43,7 @@ public class SSHRemoteExecMainActivity extends Activity {
 		edtTextReturnServer = (EditText) findViewById(R.id.edtTextReturnServer);
 		addButtonListener();
 		edtTextReturnServer.setKeyListener(null);
+		
 	}
 	
 	@Override
@@ -116,12 +117,15 @@ public class SSHRemoteExecMainActivity extends Activity {
 				Command c = cDao.getCommandByName(selectedCommand);
 
 				ProgressDialog dialog = ProgressDialog.show(SSHRemoteExecMainActivity.this, "Connecting...", "Connecting to Server: " + s.getIp() + ":" + s.getPort().toString(), true);
-				SSHConnection sshConnection = new SSHConnection(s.getUsername(), s.getPassword(), s.getIp(), s.getPort());
+				dialog.show();
+				SSHConnection sshConn = new SSHConnection(s.getUsername(), s.getPassword(), s.getIp(), s.getPort());
 				dialog.dismiss();
-
-				dialog = ProgressDialog.show(SSHRemoteExecMainActivity.this, "Executing Command...", "Executing: " + c.getName() + " on Server: " + s.getServerName(), true);
-				edtTextReturnServer.setText(sshConnection.execCMD(c.getCommand()));
+				
+				dialog = ProgressDialog.show(SSHRemoteExecMainActivity.this, "Executing...", "Executing: " + c.getName() + " on Server: " + s.getServerName(), true);
+				dialog.show();
+				edtTextReturnServer.setText(sshConn.execCMD(c.getCommand()));
 				dialog.dismiss();
+				
 			}
 		};
 

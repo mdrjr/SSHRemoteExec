@@ -51,7 +51,7 @@ public class MenuServersListActivity extends Activity {
 
 		addButtonDeleteListener();
 		addButtonUpdateListener();
-		addSpinnerListener();
+		addSpinnerOnChangeListener();
 	}
 	
 	private void populateSpinner() {
@@ -95,7 +95,7 @@ public class MenuServersListActivity extends Activity {
 		btnUpdate.setOnClickListener(l);
 	}
 
-	private void addSpinnerListener() {
+	private void addSpinnerOnChangeListener() {
 		OnItemSelectedListener l = new OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long id) {

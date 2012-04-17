@@ -8,6 +8,7 @@ import android.util.Log;
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 
 public class SSHConnection {
@@ -30,10 +31,14 @@ public class SSHConnection {
 		this.password = password;
 		this.host = host;
 		this.port = port;
-		connect();
+		
 	}
 
-	private void connect() {
+	
+
+	public String execCMD(String cmd) {
+		StringBuilder sb = new StringBuilder();
+		
 		jsch = new JSch();
 		prop = new Properties();
 
@@ -43,21 +48,44 @@ public class SSHConnection {
 			session = jsch.getSession(username, host, port);
 			session.setPassword(password);
 			session.setConfig(prop);
+			session.setTimeout(10000);
+			
 			session.connect();
+			
 		} catch (Exception e) {
 			Log.e("SSH-Connection", e.getMessage());
+			sb.append("Could not connect to server.\n");
+			sb.append(e.getMessage());
+			return sb.toString();
 		}
-	}
-
-	public String execCMD(String cmd) {
-		StringBuilder sb = new StringBuilder();
+	
+		
+		if (!session.isConnected())
+			try {
+				session.connect();
+			} catch (JSchException e1) {
+				sb.append("Could not connect to the Server\n");
+				Log.e("SSH-Connection", e1.getMessage());
+				sb.append(e1.getMessage());
+				return sb.toString();
+			}
+		
 		try {
-			
-			if (!session.isConnected()) session.connect();
-			
 			channel = session.openChannel("exec");
-			
+		} catch (JSchException e1) {
+			sb.append("Could not open SSH Channel"); 
+			Log.e("SSH-Connection", e1.getMessage());
+			sb.append(e1.getMessage());
+			return sb.toString();
+		}
+
+		
+		
+		
+		
+		try {
 			((ChannelExec)channel).setCommand(cmd);
+			
 			
 			channel.connect();
 			
@@ -79,6 +107,7 @@ public class SSHConnection {
 			}
 		} catch (Exception e) {
 			Log.e("SSH-Connection", e.getMessage());
+			sb.append(e.getMessage());
 		}
 		
 		return sb.toString();
