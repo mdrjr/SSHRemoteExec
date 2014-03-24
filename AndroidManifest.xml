@@ -10,7 +10,7 @@
 
     <application
         android:icon="@drawable/icon"
-        android:label="@string/app_name" android:permission="android.permission.INTERNET" android:allowBackup="true" android:allowClearUserData="true">
+        android:label="@string/app_name" android:allowBackup="true" android:allowClearUserData="true">
         <activity
             android:name=".SSHRemoteExecMainActivity"
             android:label="@string/app_name" >
